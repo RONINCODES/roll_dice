@@ -21,20 +21,16 @@
 arr = []
 (1..6).each do |dice1|
   (1..6).each do |dice2|
-    key = dice1 + dice2  # assigned a variabe 'key' to to the sum of dice1 and dice 2
+    key = dice1 + dice2  # assigned a variable 'key' to to the sum of dice1 and dice 2
     key = key.to_s       # set variable 'key' to the sum of dice1+dice2, changed it to a string from an integer
-    puts key             # display key
+    #puts key             # display key
     current_value = hash[key]   #set variable current_value to equal the hash keys
-    puts current_value          # display current number
+    #puts current_value          # display current number
     new_value = current_value + 1 #set variable new_value to current_value + 1 (this acts as our counter)
-    puts new_value                  #display new value
+    #puts new_value                  #display new value
     hash[key] = new_value           #here we update the new value by pushing it back into the hash.
-
-
-    #puts "Dice Roll:#{dice1},#{dice2}  Total: #{dice1 + dice2}"
-    #arr << [dice1,dice2] #puts groupings of dice rolls into empty array
-
   end # end loop 1
 end  # end loop 2
-#puts "there are #{arr.count} possible permutations" # interprolate the array groupings and count how many there are
-puts "#{hash[key]} occurs #{value} times"
+
+#puts "#{key} occurs #{value} times"
+hash.each { |key, value| puts "#{key}occurs #{value} times" }
